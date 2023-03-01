@@ -21,9 +21,10 @@ function App() {
 
 export default App;
 
-const StyleApp = styled.body`
+const StyleApp = styled.html`
   background-color: deeppink;
   height: 150vh;
+  width: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
