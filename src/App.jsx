@@ -23,7 +23,7 @@ export default App;
 
 const StyleApp = styled.body`
   background-color: deeppink;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   align-items: center;
