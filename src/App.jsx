@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import HeaderMenu from "./components/HeaderMenu";
 import Logo from "./components/Logo";
 import HomePageUnlloged from "./pages/HomePageUnlogged/HomePageUnlogged";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import GlobalStyle from "./style/resetCSS";
 
 function App() {
@@ -9,10 +11,11 @@ function App() {
     <StyleApp>
       <BrowserRouter>
         <GlobalStyle />
+        <HeaderMenu />
         <Logo />
         <Routes>
           <Route path="/" element={<HomePageUnlloged />} />
-          {/* <Route path="/signup" element={}/> */}
+          <Route path="/sign-up" element={<SignUpPage />}/>
           {/* <Route path="/signin" element={}/>
       <Route path="/ranking" element={}/> */}
         </Routes>

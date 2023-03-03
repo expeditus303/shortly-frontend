@@ -11,9 +11,10 @@ export default function RenderRanking(props) {
 }
 
 const LiContainer = styled.li`
-  background-color: grey;
+  /* background-color: grey; */
   width: 100%;
-  margin: 5% 0%;
+  margin: 1.2rem;
   text-justify: distribute-all-lines;
   text-align: justify;
+  letter-spacing: 0.05rem;
 `;

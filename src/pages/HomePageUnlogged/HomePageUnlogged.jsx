@@ -3,6 +3,7 @@ import styled from "styled-components";
 import trophy from "../../assets/trophy.png";
 import getRanking from "../../services/apiRanking";
 import RenderRanking from "../../components/Ranking";
+import { Link } from "react-router-dom";
 
 export default function HomePageUnlloged() {
   const [ranking, setRanking] = useState([]);
@@ -41,13 +42,17 @@ export default function HomePageUnlloged() {
           />
         ))}
       </RankingList>
+
+      <Link to="/sign-up">
+        <SignUpMessage><span>Sign up</span>&nbsp;to start shortening your links!</SignUpMessage>
+      </Link>
     </>
   );
 }
 
 const HomePageRankingContainer = styled.div`
-  width: 50%;
-  background-color: white;
+  /* width: 50%; */
+  /* background-color: white; */
 
   display: flex;
   justify-content: space-around;
@@ -58,14 +63,30 @@ const HomePageRankingContainer = styled.div`
 
   img {
     width: 2.5rem;
+    margin-right: 0.5rem;
   }
 `;
 
 const RankingList = styled.ol`
   background-color: green;
-  width: 80%;
-  margin: 5%;
+  /* width: 80%; */
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+`;
 
-  text-justify: distribute-all-lines;
-  text-align: justify;
+const SignUpMessage = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  /* background-color: green; */
+
+  span {
+    /* text-decoration: underline; */
+    color: darkolivegreen;
+  }
 `;
