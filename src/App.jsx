@@ -27,8 +27,8 @@ function App() {
 export default App;
 
 const StyleApp = styled.div`
-  /* background-color: deeppink; */
-  height: 100vh;
+  background-color: #54c764;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

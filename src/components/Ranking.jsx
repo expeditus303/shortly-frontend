@@ -17,4 +17,5 @@ const LiContainer = styled.li`
   text-justify: distribute-all-lines;
   text-align: justify;
   letter-spacing: 0.05rem;
+  color: #064c11;
 `;

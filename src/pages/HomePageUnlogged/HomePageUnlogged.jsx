@@ -53,7 +53,7 @@ export default function HomePageUnlloged() {
 const HomePageRankingContainer = styled.div`
   /* width: 50%; */
   /* background-color: white; */
-
+  color: #215228;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -68,13 +68,16 @@ const HomePageRankingContainer = styled.div`
 `;
 
 const RankingList = styled.ol`
-  background-color: green;
+  background-color: #72d77f;
   /* width: 80%; */
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   justify-content: center;
+  border: 0.1rem ;
+  border-radius: 1.7rem;
+  padding: 0.5rem 0rem;
 `;
 
 const SignUpMessage = styled.div`
@@ -82,11 +85,11 @@ const SignUpMessage = styled.div`
   justify-content: center;
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   /* background-color: green; */
 
   span {
     /* text-decoration: underline; */
-    color: darkolivegreen;
+    color: #215228;
   }
 `;
