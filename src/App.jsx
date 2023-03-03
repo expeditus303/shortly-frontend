@@ -24,7 +24,7 @@ function App() {
 export default App;
 
 const StyleApp = styled.div`
-  background-color: deeppink;
+  /* background-color: deeppink; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,4 +32,13 @@ const StyleApp = styled.div`
 
   font-size: 0.875rem;
   font-family: "Lexend Deca", sans-serif;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
 `;

@@ -1,28 +1,32 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import shortlyLogo from "../assets/shortlyLogo.png"
+import shortlyLogo from "../assets/shortlyLogo.png";
 
 export default function Logo() {
-    return (
-        <LogoContainer>
-            <h1>Shortly</h1>
-            <img src={shortlyLogo} alt="" />
-        </LogoContainer>
-    )
+  return (
+    <LogoContainer>
+      <Link to="/">
+        <h1>Shortly</h1>
+        <img src={shortlyLogo} alt="" />
+      </Link>
+    </LogoContainer>
+  );
 }
 
 const LogoContainer = styled.div`
   background-color: white;
   width: 80%;
-  margin: 10%;
-  
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  margin: 14%;
 
   font-size: 4rem;
   font-weight: 200;
 
+  a {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+  }
   img {
     width: 5rem;
   }
-`
+`;
