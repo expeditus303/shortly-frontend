@@ -53,7 +53,6 @@ export default function HomePageUnlloged() {
 const HomePageRankingContainer = styled.div`
   /* width: 50%; */
   /* background-color: white; */
-  color: #215228;
   display: flex;
   justify-content: space-around;
   align-items: center;

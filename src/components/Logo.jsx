@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import shortlyLogo from "../assets/shortlyLogo.png";
+import { FiMenu } from "react-icons/fi";
 
 export default function Logo() {
   return (
@@ -14,8 +15,7 @@ export default function Logo() {
 }
 
 const LogoContainer = styled.div`
-  /* background-color: ; */
-  /* width: 80%; */
+
   margin: 5rem 0rem 2rem;
 
   font-size: 4rem;
@@ -35,4 +35,5 @@ const LogoContainer = styled.div`
   img {
     width: 5rem;
   }
+
 `;
