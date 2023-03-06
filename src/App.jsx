@@ -5,6 +5,7 @@ import HeaderMenu from "./components/HeaderMenu";
 import Logo from "./components/Logo";
 import Menu from "./components/Menu";
 import { UserContext } from "./contexts/UserContext";
+import HomePageLogged from "./pages/HomePageLogged/HomePageLogged";
 import HomePageUnlloged from "./pages/HomePageUnlogged/HomePageUnlogged";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
@@ -27,7 +28,7 @@ function App() {
           <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
           <Logo />
           <Routes>
-            <Route path="/" element={<HomePageUnlloged />} />
+            <Route path="/" element={(user ? <HomePageLogged /> : <HomePageUnlloged />)} />
             <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/sign-in" element={<SignInPage />} />
             {/* <Route path="/ranking" element={}/> */}
