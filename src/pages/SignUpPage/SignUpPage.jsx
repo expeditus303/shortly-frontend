@@ -14,23 +14,24 @@ export default function SignUpPage() {
 
   const [errorExists, setErrorExists] = useState(undefined);
 
-  const [loading, setLoading] = useState(false);
+  const [loadingEffect, setLoadingEffect] = useState(false);
 
   const navigate = useNavigate();
 
   async function signUp(event) {
     event.preventDefault();
 
-    setLoading(true);
+    setLoadingEffect(true);
 
     if (!validateEmail(formData.email)) {
       setErrorExists(
         "Please check that you have entered a valid email address and try again."
       );
-      return setLoading(false);
+      return setLoadingEffect(false);
     } else {
       if (formData.password !== formData.confirmPassword) {
-        setErrorExists("Passwords do not match, please try again.");
+        setErrorExists("Passwords do not match, please try again.")
+        return setLoadingEffect(false)
       }
       try {
         const promisse = await axios.post(
@@ -38,14 +39,14 @@ export default function SignUpPage() {
           formData
         );
         console.log(promisse);
-        setLoading(false);
+        setLoadingEffect(false);
         return navigate("/");
       } catch (err) {
         if (err.response.status === 409) {
           setErrorExists(
             "The email you entered is already in use. Please try another email address or log in to your existing account."
           );
-          return setLoading(false);
+          return setLoadingEffect(false);
         }
       }
     }
@@ -65,7 +66,7 @@ export default function SignUpPage() {
         <h2>{errorExists}</h2>
       </ErrorContainer>
 
-      <Form onSubmit={signUp} loading={loading}>
+      <Form onSubmit={signUp} loadingEffect={loadingEffect}>
         <input
           type="text"
           name="name"
@@ -144,14 +145,14 @@ const Form = styled.form`
     padding: 1rem;
     background-color: #215228;
     color: #54c764;
-    display: ${({ loading }) => (loading ? "none" : "flex")};
+    display: ${({ loadingEffect }) => (loadingEffect ? "none" : "flex")};
     justify-content: center;
     align-items: center;
     height: 3.5rem;
   }
 
   button#loading {
-    display: ${({ loading }) => (loading ? "flex" : "none")};
+    display: ${({ loadingEffect }) => (loadingEffect ? "flex" : "none")};
     justify-content: center;
     align-items: center;
   }

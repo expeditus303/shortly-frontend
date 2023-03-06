@@ -4,27 +4,35 @@ import styled from "styled-components";
 import HeaderMenu from "./components/HeaderMenu";
 import Logo from "./components/Logo";
 import Menu from "./components/Menu";
+import { UserContext } from "./contexts/UserContext";
 import HomePageUnlloged from "./pages/HomePageUnlogged/HomePageUnlogged";
+import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import GlobalStyle from "./style/resetCSS";
 
 function App() {
+  const [user, setUser] = useState(sessionStorage.getItem("tokenLocal"));
 
-  const [openMenu, setOpenMenu] = useState(false)
+  console.log("aqui mano brow")
+  console.log(user)
+
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <StyleApp>
       <BrowserRouter>
-        <GlobalStyle />
-        <HeaderMenu openMenu={openMenu}setOpenMenu={setOpenMenu}/>
-        <Menu openMenu={openMenu} setOpenMenu={setOpenMenu}/>
-        <Logo />
-        <Routes>
-          <Route path="/" element={<HomePageUnlloged />} />
-          <Route path="/sign-up" element={<SignUpPage />}/>
-          {/* <Route path="/signin" element={}/>
-      <Route path="/ranking" element={}/> */}
-        </Routes>
+        <UserContext.Provider value={{ user, setUser }}>
+          <GlobalStyle />
+          <HeaderMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+          <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+          <Logo />
+          <Routes>
+            <Route path="/" element={<HomePageUnlloged />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
+            <Route path="/sign-in" element={<SignInPage />} />
+            {/* <Route path="/ranking" element={}/> */}
+          </Routes>
+        </UserContext.Provider>
       </BrowserRouter>
     </StyleApp>
   );
